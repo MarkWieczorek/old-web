@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+	<title>GRAIL Crustal Thickness Archive</title>
+	<!-- Design by Mark Wieczorek -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<meta name="keywords" content="GRAIL crustal thickness, Moon">
+	<meta name="description" content="Archive of GRAIL crustal thickness maps of the Moon">
+</head>
+
+<body>
+
+<div class="main">
+
+	<p class="centeredimage"><img src="../images/logo.png" style="border: 1px solid #555;" width=894 height=120 alt="Mark Wieczorek's Home Page"></p>
+
+	<table class="menu">
+	<tbody>
+	<tr>
+	<td class="c1"><a href="../index.html">HOME</a></td>
+	<td class="c2"><a href="../curriculum-vitae.html">CURRICULUM VITAE</a></td>
+	<td class="c3"><a href="../publications.html">PUBLICATIONS</a></td>
+	<td class="c4"><a href="../research.html">RESEARCH</a></td>
+	</tr>
+	</tbody>
+	</table>
+
+	<p class="dir extramargintop">
+	<a class="dir" href="../GRAILCrustalThicknessArchive.zip">Download the entire archive (96 MB)</a></p>
+
+	<h1>GRAIL Crustal Thickness Archive</h1>
+
+	<p>This archive contains crustal thickness maps of the Moon derived from GRAIL gravity data as published in <i>Wieczorek et al.</i> (2013).</p>
+
+	<p>The following steps were used in creating these maps.</p>
+
+	<ol>
+		<li> The GRAIL gravity model GL0420A was truncated beyond degree 310.</li>
+		<li> The gravitational contribution of the surface relief was computed using Lunar Reconnaissance Orbiter topography from the instrument LOLA, independent estimates of crustal grain density, and an assumed crustal porosity &phi; with powers of topography and density up to N=7 (<i>Wieczorek</i> 2007).</li>
+		<li>The downward continuation filter of <i>Wieczorek and Phillips</i> (1998) was chosen to have a value of 0.5 at degree &lambda;.</li>
+		<li>The average crustal thickness and mantle density &rho;<sub><small>m</small></sub> were varied to fit a specific average thickness at the Apollo 12 and 14 sites and to obtain a minimum crustal thickness less than 1 km.</li>
+	</ol>
+	<br>
+
+	<table style="width: 800px; margin-left: 60px; margin-right: 15px; text-align: center; background-color: #cccccc">
+		<caption><b>Summary of crustal thickness model parameters</b></caption>
+		<tbody>
+		<tr>
+		<th style="width: 90px;">Model</th>
+		<th style="width: 110px;">Average thickness (km)</th>
+		<th style="width: 120px;">Minimum thickness (km)</th>
+		<th style="width: 120px;">Apollo 12/14 thickness (km)</th>
+		<th style="width: 70px;">&phi; (%)</th>
+		<th style="width: 70px;">&rho;<sub>m</sub> (kg&nbsp;m<sup><small>-3</small></sup>)</th>
+		<th style="width: 60px;">&lambda;</th>
+		</tr>
+
+		<tr>
+		<td>1</td>
+		<td>34</td>
+		<td>0.6</td>
+		<td>29.9</td>
+		<td>12</td>
+		<td>3220</td>
+		<td>80</td>
+		</tr>
+
+		<tr>
+		<td>2</td>
+		<td>35</td>
+		<td>0.2</td>
+		<td>30.8</td>
+		<td>7</td>
+		<td>3360</td>
+		<td>80</td>
+		</tr>
+
+		<tr>
+		<td>3</td>
+		<td>43</td>
+		<td>1.0</td>
+		<td>38.1</td>
+		<td>12</td>
+		<td>3150</td>
+		<td>70</td>
+		</tr>
+
+		<tr>
+		<td>4</td>
+		<td>43</td>
+		<td>0.5</td>
+		<td>38.0</td>
+		<td>7</td>
+		<td>3300</td>
+		<td>70</td>
+		</tr>
+
+		</tbody>
+	</table>
+
+	<h2>Archive Contents</h2>
+
+	<h3>Model 1</h3>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left"><a href="Data/Model1_thick.sh">Model1_thick.sh</a></td>
+		<td class="right">Total crustal thickness expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model1_thick.dat">Model1_thick.dat</a></td>
+		<td class="right">Total crustal thickness expanded on a grid.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model1_cmi.sh">Model1_cmi.sh</a></td>
+		<td class="right">Radius of the crust-mantle interface expanded in spherical harmonics.</td></tr>
+		<tr>
+
+		<td class="left"><a href="Data/Model1_cmi.dat">Model1_cmi.dat</a></td>
+		<td class="right">Depth of the crust-mantle interface below mean planetary radius expanded on a grid.</td></tr>
+		</tbody>
+	</table>
+
+	<h3>Model 2</h3>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left"><a href="Data/Model2_thick.sh">Model2_thick.sh</a></td>
+		<td class="right">Total crustal thickness expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model2_thick.dat">Model2_thick.dat</a></td>
+		<td class="right">Total crustal thickness expanded on a grid.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model2_cmi.sh">Model2_cmi.sh</a></td>
+		<td class="right">Radius of the crust-mantle interface expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model2_cmi.dat">Model2_cmi.dat</a></td>
+		<td class="right">Depth of the crust-mantle interface below mean planetary radius expanded on a grid.</td></tr>
+		</tbody>
+	</table>
+
+	<h3>Model 3</h3>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left"><a href="Data/Model3_thick.sh">Model3_thick.sh</a></td>
+		<td class="right">Total crustal thickness expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model3_thick.dat">Model3_thick.dat</a></td>
+		<td class="right">Total crustal thickness expanded on a grid.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model3_cmi.sh">Model3_cmi.sh</a></td>
+		<td class="right">Radius of the crust-mantle interface expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model3_cmi.dat">Model3_cmi.dat</a></td>
+		<td class="right">Depth of the crust-mantle interface below mean planetary radius expanded on a grid.</td></tr>
+		</tbody>
+	</table>
+
+	<h3>Model 4</h3>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left"><a href="Data/Model4_thick.sh">Model4_thick.sh</a></td>
+		<td class="right">Total crustal thickness expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model4_thick.dat">Model4_thick.dat</a></td>
+		<td class="right">Total crustal thickness expanded on a grid.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model4_cmi.sh">Model4_cmi.sh</a></td>
+		<td class="right">Radius of the crust-mantle interface expanded in spherical harmonics.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/Model4_cmi.dat">Model4_cmi.dat</a></td>
+		<td class="right">Depth of the crust-mantle interface below mean planetary radius expanded on a grid.</td></tr>
+
+		</tbody>
+	</table>
+
+	<h3>Ancillary data</h3>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left"><a href="Data/LOLA_PA_310.sh">LOLA_PA_310.sh</a></td>
+		<td class="right">Lunar Reconnaissance Orbiter surface relief from the instrument LOLA (in a principal axis coordinate system) expanded in spherical harmonics up to degree 310.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/LOLA_PA_310.dat">LOLA_PA_310.dat</a></td>
+		<td class="right">Lunar Reconnaissance Orbiter surface relief from the instrument LOLA (in a principal axis coordinate system) expanded on a grid.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/grain_density_310.sh">grain_density_310.sh</a></td>
+		<td class="right">Crustal grain density expanded in spherical harmonics up to degree 310.</td></tr>
+
+		<tr>
+		<td class="left"><a href="Data/grain_density_310.dat">grain_density_310.dat</a></td>
+		<td class="right">Crustal grain density expanded on a grid.</td></tr>
+
+		</tbody>
+	</table>
+
+	<h2> File formats</h2>
+
+	<p>
+	All ".dat" files are in an ASCII raster format where the first and last data values represent the latitude and longitude coordinates (90N, 0E) and (90S, 360E), respectively. The interval between data values is 0.25 degrees, corresponding to a matrix having 721 latitudinal and 1441 longitudinal elements. Values for the gridded data are in either km or kg&nbsp;m<sup><small>-3</small></sup>, and the mean planetary radius is 1737.151 km. All grids were constructed using spherical harmonic expansions with degrees up to 310.</p>
+
+	<p>All ".sh" files contain spherical harmonic coefficients with each line giving the degree, order, and cosine and sine coefficents (i.e., l, m, Clm, Slm). The spherical harmonic coefficients have units of meters.</p>
+
+	<h2>References</h2>
+
+	<p class="hanging">
+	Wieczorek, M.A., and R.J. Phillips, Potential anomalies on a sphere: Applications to the thickness of the lunar crust, <i>J. Geophys. Res.</i>, <b>103</b>, 1715-1724, doi:<a href="http://dx.doi.org/10.1029/97JE03136">10.1029/97JE03136</a>, 1998.</p>
+
+	<p class="hanging"> Wieczorek, M. A., Gravity and topography of the terrestrial planets, <i>Treatise on Geophysics</i>, <b>10</b>, 165-206, doi:<a href="http://dx.doi.org/10.1016/B978-044452748-6/00156-5">10.1016/B978-044452748-6/00156-5</a>, 2007.</p>
+
+	<p class="hanging extramarginbot">Wieczorek, M. A., G. A. Neumann, F. Nimmo, W. S. Kiefer, G. J. Taylor, H. J. Melosh, R. J. Phillips, S. C. Solomon, J. C. Andrews-Hanna, S. W. Asmar, A. S. Konopliv, F. G. Lemoine, D. E. Smith, M. M. Watkins, J. G. Williams, M. T. Zuber, The crust of the Moon as seen by GRAIL, <i>Science</i>, <b>339</b>, 671-675, doi:<a href="http://dx.doi.org/10.1126/science.1231530">10.1126/science.1231530</a>, 2013.</p>
+
+	<p class="dir"> >  <a href="http://www.ipgp.jussieu.fr/~wieczor/" class="dir">Home</a></p>
+
+	<table class="footer2">
+	<tbody>
+		<tr>
+		<td class="c1"><a href="https://lagrange.oca.eu/?lang=en">Laboratoire Lagrange</a></td>
+		<td class="c2"><a href="https://www.oca.eu/?lang=en">Observatoire de la Côte d'Azur</a></td>
+		<td class="c3"><a href="http://univ-cotedazur.fr/">L’Université de Nice-Sophia Antipolis</a></td>
+		</tr>
+	</tbody>
+	</table>
+	
+</div>
+
+</body>
+</html>

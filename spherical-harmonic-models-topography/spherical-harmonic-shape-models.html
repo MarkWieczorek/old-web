@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+	<title>Spherical Harmonic Models of Planetary Topography</title>
+	<!-- Design by Mark Wieczorek -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<meta name="keywords" content="Spherical harmonic model, planetary topography, Moon, Mars, Venus">
+	<meta name="description" content="Spherical harmonic shape models of the Moon, Mars and Venus.">
+</head>
+
+<body>
+
+<div class="main">
+
+	<p class="centeredimage"><img src="../images/logo.png" style="border: 1px solid #555;" width=894 height=120 alt="Mark Wieczorek's Home Page"></p>
+
+	<table class="menu">
+	<tbody>
+	<tr>
+	<td class="c1"><a href="../index.html">HOME</a></td>
+	<td class="c2"><a href="../curriculum-vitae.html">CURRICULUM VITAE</a></td>
+	<td class="c3"><a href="../publications.html">PUBLICATIONS</a></td>	
+	<td class="c4"><a href="../research.html">RESEARCH</a></td>
+	</tr>
+	</tbody>
+	</table>
+
+	<h1 class="extramargintop">Spherical Harmonic Models of Planetary Topography</h1>
+	<p>This archive contains the spherical-harmonic shape models of the Moon, Venus, and Mars that were presented in <i>Wieczorek</i> (2015). These files are in ascii format, with each line containing</p>
+
+	<blockquote>
+		<p><tt>l, m, Clm, Slm</tt></p>
+	</blockquote>
+
+	<p>where <tt>l</tt> is the spherical harmonic degree, <tt>m</tt> is the angular order, and <tt>Clm</tt> and <tt>Slm</tt> are the real spherical harmonic cosine and sine coefficients, respectively. Alternatively, using the notation where the sine coefficients are assigned to negative angular orders, each line corresponds to</p>
+
+	<blockquote>
+		<p><tt>l, m, Clm, Cl,-m</tt>.</p>
+	</blockquote>
+
+	<p>The spherical harmonic coefficients are to be used with the  <a href="http://shtools.ipgp.fr/www/conventions.html">"geodesy" 4&pi; normalized spherical harmonics (excluding the Condon-Shortley phase)</a> and are expressed in units of meters. </p>
+
+	<p>All models were constructed by first obtaining an N by 2N equally spaced grid of global planetary radii in planetocentric coordinates, and then using the sampling theorem of <i>Driscoll and Healy (1994)</i> to compute the spherical harmonic coefficients. These grids include the north pole and 0&deg; longitude, but not the south pole and 360&deg; longitude. When N is even, the spherical harmonic transform is exact if the function is bandlimited to degree N/2-1. These calculations were performed using the <a href="http://shtools.ipgp.fr">SHTOOLS</a> routine <tt>SHExpandDH</tt>. Details specific to each model are given below and in <i>Wieczorek</i> (2015).</p>
+
+	<h2>Earth</h2>
+
+	<p>Updated and improved versions of my previous Earth shape models have been provided by <i>Hirt and Rexer</i> (2015). These can be found on the website <a href="http://www.iapg.bgu.tum.de/9321785--~iapg~forschung~Topographie~Earth2014.html">Earth2014</a>.</p>
+
+	<h2>Venus</h2>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left">
+			<a href="VenusTopo719.shape.zip">VenusTopo719.shape</a></td>
+		<td class="right">Degree 719 shape model of Venus derived from Magellan (GTDR3.2), Pioneer Venus, and Venera 15/16 altimetry.</td></tr>
+		</tbody>
+	</table>
+
+	<p>VenusTopo719.shape is a spherical harmonic model of the shape of Venus expanded to spherical harmonic degree 719. This model is based primarily on the sinusoidally projected <a href="ftp://voir.mit.edu/pub/mg_3003/">GTDR3.2</a> data set, with gaps filled by <a href="http://pds-geosciences.wustl.edu/missions/premgn/index.htm">Pioneer Venus</a> (file <tt>pven001a.img</tt>) and <a href="http://pds-geosciences.wustl.edu/missions/venera/index.htm">Venera 15/16</a> (file <tt>mpi-venus-alt.dat</tt>) data. The following steps were followed in constructing the spherical harmonic model:</p>
+
+	<ol>
+		<li>Gaps in the sinusoidally projected GTDR3.2 data set were first filled by Pioneer Venus, and then Venera 15/16 data.</li>
+		<li>The sinusoidally projected data were transformed to a cylindrical projection. After mirroring along all four boundaries, the remaining gaps were filled by interpolation using the GMT command <tt>surface</tt> with a tension parameter of <tt>T0.35</tt>.</li>
+		<li>The spherical harmonic algorithm of <i>Driscoll and Heally</i> (1994), modified to use N by 2N grids, was used to determine the spherical harmonic coefficients assuming that the function was bandlimited to degree 719.</li>
+	</ol>
+
+	<h2>Mars</h2>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left">
+			<a href="MarsTopo2600.shape.zip">MarsTopo2600.shape</a></td>
+		<td class="right">Degree 2600 shape model of Mars derived from the PDS 1/32&deg; resolution gridded data set.</td></tr>
+		</tbody>
+	</table>
+
+	<p>MarsTopo2600.shape is a spherical harmonic model of the shape of Mars expanded to spherical harmonic degree 2600. The data source is the 1/32&deg; gridded data product at the <a href="http://pds-geosciences.wustl.edu/missions/mgs/megdr.html">PDS</a> (file <tt>megr90n000fb.img</tt>). The 0.03125&deg; resolution data were first translated from pixel to gridline registration using the GMT command <tt>grdsample</tt>, and the spherical harmonic algorithm of <i>Driscoll and Heally</i> (1994), modified to use N by 2N grids, was then used to determine the spherical harmonic coefficients to spherical harmonic degree 2600.
+	</p>
+
+	<h2>The Moon</h2>
+
+	<table class="SHMODELS">
+		<tbody>
+		<tr>
+		<td class="left">
+			<a href="MoonTopo2600pa.shape.zip">MoonTopo2600pa.shape</a></td>
+		<td class="right">Degree 2600 shape model of the Moon derived from the LOLA PDS 1/64&deg; resolution gridded data set in principal axis coordinates.</td></tr>
+		</tbody>
+	</table>
+
+	<p>MoonTopo2600pa.shape is a spherical harmonic model of the shape of the Moon in principal axis coordinates expanded to spherical harmonic degree 2600. The principal axis coordinate system is the same coordinate system used by the GRAIL gravity products. The data source is the March 15, 2013 version of the 1/64&deg; gridded LOLA data product at the <a href="http://pds-geosciences.wustl.edu/missions/lro/lola.htm">PDS</a> (file <tt>LDEM_64_PA.IMG</tt>).</p>
+
+	<h2>References</h2>
+
+	<p class="hanging">Driscoll, J.R. and D.M. Healy, Computing Fourier transforms and convolutions on the 2-sphere, <i>Adv. Appl. Math.</i>, <b>15</b>, 202-250, 1994.</p>
+
+	<p class="hanging">Hirt, C. and M. Rexer, Earth2014: 1 arc-min shape, topography, bedrock and ice-sheet models - available as gridded data and degree-10,800 spherical harmonics, <i>International Journal of Applied Earth Observation and Geoinformation</i>, <b>39</b>, 103-112, doi:10.1016/j.jag.2015.03.001, 2015. </p>
+
+	<p class="hanging">Wessel, P., and W. H. F. Smith, Free software helps map and display data, <i>EOS</i>, 72(441), 1991.</p>
+
+	<p class="hanging extramarginbot">Wieczorek, M. A., Gravity and topography of the terrestrial planets, <i>Treatise on Geophysics</i>, <b>10</b>, 153-193,  doi:<a href="http://dx.doi.org/10.1016/B978-0-444-53802-4.00169-X">10.1016/B978-0-444-53802-4.00169-X</a>, 2015.</p>
+
+	<p class="dir"> > <a href="../index.html" class="dir">Home</a></p>
+
+	<table class="footer2">
+	<tbody>
+		<tr>
+		<td class="c1"><a href="https://lagrange.oca.eu/?lang=en">Laboratoire Lagrange</a></td>
+		<td class="c2"><a href="https://www.oca.eu/?lang=en">Observatoire de la Côte d'Azur</a></td>
+		<td class="c3"><a href="http://univ-cotedazur.fr/">L’Université de Nice-Sophia Antipolis</a></td>
+		</tr>
+	</tbody>
+	</table>
+
+</div>
+
+</body>
+</html>
